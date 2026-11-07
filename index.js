@@ -1,33 +1,37 @@
 
-// Utility Functions
-
 /**
- * Capitalizes the first letter of each word in the input string.
+ * Capitalizes the first letter of each word in a string.
  * @param {string} input - The input string.
- * @returns {string} - The formatted string.
+ * @returns {string} The capitalized string.
  */
+
 function capitalizeWords(input) {
     return input.replace(/\b\w/g, char => char.toUpperCase());
 }
 
 /**
- * Filters active users from the array.
+ * Filters an array of users to return only active users.
  * @param {Array} users - An array of user objects.
- * @returns {Array} - An array of active user objects.
+ * @returns {Array} An array containing only active users.
  */
 function filterActiveUsers(users) {
     return users.filter(user => user.isActive);
 }
 
 /**
- * Logs an action performed by a user with a timestamp.
+ * Logs a user action with a timestamp.
  * @param {string} action - The action performed.
- * @param {string} username - The name of the user.
- * @returns {string} - The log message.
+ * @param {string} username - The username.
+ * @returns {string} The formatted log message.
  */
 function logAction(action, username) {
     const timestamp = new Date().toISOString();
+
     return `User ${username} performed ${action} at ${timestamp}`;
 }
 
-module.exports = { capitalizeWords, filterActiveUsers, logAction };
+module.exports = {
+    capitalizeWords,
+    filterActiveUsers,
+    logAction
+};
